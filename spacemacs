@@ -318,6 +318,11 @@ you should place your code here."
   (setq org-agenda-file-regexp "~/Tasks/org/*" )
   (setq evil-escape-key-sequence "jk")
 
+  (helm-delete-action-from-source "Insert Citation"
+                                  helm-source-bibtex)
+  (helm-add-action-to-source "Insert Citation"
+                             'helm-bibtex-insert-citation helm-source-bibtex 0)
+
   " Copy/paste to/from clipboard "
   (defun copy-to-clipboard ()
     "Copies selection to x-clipboard."
